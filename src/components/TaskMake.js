@@ -4,7 +4,9 @@ function TaskMake({ task, setCheck, check, dispatch }) {
         setCheck(check + (task.done ? -1 : 1))
         task.done = !task.done
     }
-    const handleDown = () => { }
+    const handleDown = (task) => {
+        dispatch({ type: "DOWN", payload: { name: task.name, id: task.id } })
+    }
     const handleUp = (task) => {
         dispatch({ type: "UP", payload: { name: task.name, id: task.id } })
     }
@@ -16,7 +18,7 @@ function TaskMake({ task, setCheck, check, dispatch }) {
             <button className="taskname" onClick={handleCheck}>
                 {task.name}
             </button>
-            <button onClick={handleUp}>Up</button>
+            <button onClick={(e) => handleUp(task)}>Up</button>
             <button onClick={(e) => handleDown(task)}>Down</button>
             <button onClick={(e) => handleX(task)}>X</button>
         </div>

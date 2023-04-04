@@ -17,7 +17,7 @@ function AddTask({ dispatch, check, tasks }) {
     }
     return (
         <div>
-            {check} / {tasks.length} done
+            {check !== tasks.length ? check + "/" + tasks.length + " done" : check + "/" + tasks.length + " done. Well Done !!"}
             <form>
                 <input
                     type="text"

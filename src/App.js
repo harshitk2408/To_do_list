@@ -5,19 +5,28 @@ import TaskList from './components/TaskList'
 function App() {
     console.log("App")
     const taskReducer = (tasks, action) => {
+        let ind
         switch (action.type) {
             case "ADD":
                 let newtask = [...tasks]
                 newtask.push(action.payload)
                 return newtask
             case "DELETE":
-                const ind = tasks.findIndex((t) => { return t.name === action.payload.name })
-                console.log(ind)
                 return tasks.filter((task) => task.name !== action.payload.name)
             case "UP":
-                const indup = tasks.findIndex((t) => { return t.name === action.payload.name })
-                console.log(indup)
-                return [...tasks.slice(0, indup - 1), action.payload, tasks[indup - 1], ...tasks.slice(indup + 1, tasks.length)]
+                ind = tasks.findIndex((t) => { return t.name === action.payload.name })
+                if (ind > 0) return [...tasks.slice(0, ind - 1), action.payload, tasks[ind - 1], ...tasks.slice(ind + 1, tasks.length)]
+                else {
+                    alert("High priority")
+                    return tasks
+                }
+            case "DOWN":
+                ind = tasks.findIndex((t) => { return t.name === action.payload.name })
+                if (ind < tasks.length - 1) return [...tasks.slice(0, ind), tasks[ind + 1], action.payload, ...tasks.slice(ind + 2, tasks.length)]
+                else {
+                    alert("Low priority")
+                    return tasks
+                }
             default:
                 return tasks
         }
