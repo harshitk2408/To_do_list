@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import './../App.css'
 function AddTask({ dispatch, check, tasks }) {
     const [task, setTask] = useState('')
     const handleChange = (e) => {
@@ -16,10 +16,11 @@ function AddTask({ dispatch, check, tasks }) {
         }
     }
     return (
-        <div>
-            {check !== tasks.length ? check + "/" + tasks.length + " done" : check + "/" + tasks.length + " done. Well Done !!"}
-            <form>
+        <div className="head">
+            <h2>{tasks.length > 0 ? (check !== tasks.length ? Math.min(tasks.length, check) + "/" + tasks.length + " done" : check + "/" + tasks.length + " done. Well Done !!") : "Add Tasks..."}</h2>
+            <form className="addtask">
                 <input
+                    className={task.length === 0 ? "taskaddbox" : "taskaddbox bluebg"}
                     type="text"
                     name="newTask"
                     value={task}

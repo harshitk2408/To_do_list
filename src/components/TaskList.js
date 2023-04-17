@@ -1,7 +1,8 @@
 import TaskMake from "./TaskMake"
+import './../App.css'
 export default function TaskList({ tasks, dispatch, setCheck, check }) {
     return (
-        <div>
+        <div className="tasklist">
             {tasks.map((task) => (
                 <div key={task.id}>
                     <TaskMake

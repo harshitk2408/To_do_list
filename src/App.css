@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+.tasklist {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.taskitem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+}
+
+.btn {
+    width: 5em;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 2em;
+}
+
+.tasknamebtn {
+    width: 20em;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding-top: 2em;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.taskaddbox {
+    width: 30em;
+    height: 3em;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.addtask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.head h2 {
+    font-family: 'Oleo Script', cursive;
+}
+
+.addtask button {
+    width: 10.5em;
+    height: 2em;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btnX {
+    background-color: rgba(255, 0, 0, 0.544);
+}
+
+.bluebg {
+    background-color: rgba(131, 131, 162, 0.301);
+}
+
+.greenbg {
+    background-color: rgba(84, 183, 84, 0.461);
+}
+
+html {
+    background-color: rgba(94, 155, 155, 0.22);
+    ;
+}
